@@ -9,5 +9,5 @@ gunicorn
 dvc
 httpx
 flake8
-dvc-gdrive
+dvc[gdrive]
 pydrive2
