@@ -35,10 +35,10 @@ jobs:
         run: flake8
       - name: Run pytest
         run: pytest .
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
+      # deploy:
+      #   needs: build
+      #   runs-on: ubuntu-latest
+      #   steps:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
