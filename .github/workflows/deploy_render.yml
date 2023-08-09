@@ -31,16 +31,12 @@ jobs:
           dvc pull
         env:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
-      - name: Run Flake8
-        run: flake8
       - name: Sync model to deploy directory
         run: rsync -av model/* deploy --include="*.joblib" --exclude="*.dvc" --exclude="*.txt"
+      - name: Run Flake8
+        run: flake8
       - name: Run pytest
         run: pytest .
-      # deploy:
-      #   needs: build
-      #   runs-on: ubuntu-latest
-      #   steps:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
