@@ -41,6 +41,7 @@ jobs:
     #runs-on: defines The workflow runner
     runs-on: ubuntu-latest
     #steps: defines a series of tasks executed by the Job
+    needs: build
     steps:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
