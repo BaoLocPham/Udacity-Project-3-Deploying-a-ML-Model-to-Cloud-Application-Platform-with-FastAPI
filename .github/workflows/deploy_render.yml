@@ -37,6 +37,11 @@ jobs:
         run: flake8
       - name: Run pytest
         run: pytest .
+  deploy:
+    #runs-on: defines The workflow runner
+    runs-on: ubuntu-latest
+    #steps: defines a series of tasks executed by the Job
+    steps:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
