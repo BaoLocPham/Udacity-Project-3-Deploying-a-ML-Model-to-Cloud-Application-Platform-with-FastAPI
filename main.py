@@ -23,9 +23,9 @@ async def get_models():
     """Get the model"""
     logger.info("Loading model...")
     model_path, encoder_path, lb_path = \
-        ("./model/model.joblib",
-         "./model/encoder.joblib",
-         "./model/lb_encoder.joblib")
+        ("./deploy/model.joblib",
+         "./deploy/encoder.joblib",
+         "./deploy/lb_encoder.joblib")
     # load model, encoder and label encoder
     app.model = joblib.load(model_path)
     app.encoder = joblib.load(encoder_path)
