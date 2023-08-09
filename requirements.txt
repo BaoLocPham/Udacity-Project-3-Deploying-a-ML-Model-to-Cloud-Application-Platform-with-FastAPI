@@ -7,6 +7,7 @@ fastapi==0.63.0
 uvicorn
 gunicorn
 dvc
+fsspec==2022.7.1
 httpx
 flake8
 dvc[gdrive]
