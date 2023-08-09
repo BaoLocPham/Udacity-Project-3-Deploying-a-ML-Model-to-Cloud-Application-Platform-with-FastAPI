@@ -21,11 +21,18 @@ app = FastAPI(title="MLOps app", version='1.0.0')
 @app.on_event("startup")
 async def get_models():
     """Get the model"""
+    import os
+
+    if "RENDER" in os.environ and os.path.isdir(".dvc"):
+        os.system("dvc config core.no_scm true")
+        if os.system("dvc pull") != 0:
+            exit("dvc pull failed")
+        os.system("rm -r .dvc .apt/usr/lib/dvc")
     logger.info("Loading model...")
     model_path, encoder_path, lb_path = \
-        ("./deploy/model.joblib",
-         "./deploy/encoder.joblib",
-         "./deploy/lb_encoder.joblib")
+        ("./model/model.joblib",
+         "./model/encoder.joblib",
+         "./model/lb_encoder.joblib")
     # load model, encoder and label encoder
     app.model = joblib.load(model_path)
     app.encoder = joblib.load(encoder_path)
