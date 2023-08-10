@@ -1,5 +1,6 @@
 outs:
-- md5: 1378eb87bc44b8f321543325532c4413
-  size: 8458
+- md5: ff7bc3096922991c5e257691ea788597
+  size: 8416
   hash: md5
   path: slice.txt
+  isexec: true

@@ -36,7 +36,7 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
     cv = KFold(n_splits=5, shuffle=True, random_state=1)
-    model = RandomForestClassifier()
+    model = RandomForestClassifier(n_estimators=100)
     model.fit(X_train, y_train)
 
     scores = cross_val_score(model,

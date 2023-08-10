@@ -43,6 +43,8 @@ def run(
         data,
         categorical_features=get_cat_features(),
         encoder=encoder, lb=lb, training=False)
+    print(X)
     y_preds = inference(model, X)
-    y_preds_label = lb.inverse_transform(y_preds)
-    return y_preds[0], y_preds_label[0]
+    print(y_preds)
+    y_preds_label = lb.inverse_transform(y_preds)[0]
+    return y_preds, y_preds_label
