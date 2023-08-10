@@ -4,7 +4,7 @@
  # @ Modified by: Bao Loc Pham
  # @ Modified time: 2023-08-10 09:29:43
  # @ Description:
-    query API 
+    query API
 '''
 
 
