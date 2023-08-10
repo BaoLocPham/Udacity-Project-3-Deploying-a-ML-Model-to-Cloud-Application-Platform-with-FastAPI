@@ -31,10 +31,10 @@ For version 1.0.0 simplicity I only default params
 
 The model's performance was evaluated on the validation dataset using the following metrics:
 
-Precision: 0.8932806324110671
-Recall: 0.864244741873805
-F1: 0.8785228377065111
-Accuracy on CV (5 Folds): 0.8138 (STD: 0.0062)
+**Precision**: **0.8932**
+**Recall**: **0.8642**
+**F1**: **0.8785**
+**Accuracy** on CV (5 Folds): **0.8138 (STD: 0.0062)**
 
 ## Limitations and Ethical Considerations
 
