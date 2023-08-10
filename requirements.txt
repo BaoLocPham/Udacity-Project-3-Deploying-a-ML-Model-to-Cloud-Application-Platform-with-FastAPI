@@ -11,3 +11,4 @@ httpx==0.24.1
 flake8==6.1.0
 dvc[gdrive]
 pydrive2==1.16.1
+python-dotenv
