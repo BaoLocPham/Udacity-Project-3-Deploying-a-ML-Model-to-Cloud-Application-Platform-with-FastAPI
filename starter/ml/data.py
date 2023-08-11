@@ -40,6 +40,10 @@ def simple_cleaning_data(
     # logger.info(data)
     # data.columns = data.columns.str.replace(' ', '')
     data.columns = data.columns.str.lstrip()
+    stringcols = data.select_dtypes(include='object').columns
+    data[stringcols] = data[stringcols].fillna('').astype(str)
+    data = data.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+
     # logger.info(data)
     features_to_keep = get_features()
     features_to_keep.append(label)
