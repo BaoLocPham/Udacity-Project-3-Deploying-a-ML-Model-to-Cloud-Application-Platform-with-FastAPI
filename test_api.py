@@ -40,20 +40,20 @@ def test_get_failed(test_client):
 
 def test_predict_1(test_client):
     user_input = MockUser(
-        age=43,
-        hours_per_week=50,
-        workclass='Federal-gov',
-        education='Doctorate',
-        marital_status='Never-married',
-        occupation='Prof-specialty',
-        relationship='Not-in-family',
+        age=42,
+        hours_per_week=40,
+        workclass='Private',
+        education='Bachelors',
+        marital_status='Married-civ-spouse',
+        occupation='Exec-managerial',
+        relationship='Husband',
         race='White',
-        sex='Female',
+        sex='Male',
         native_country='United-States'
     )
     response = test_client.post("/", json=user_input.dict())
     assert response.status_code == 200
-    assert response.json()['class_name'] in ["<=50K", ">50K"]
+    assert response.json()['class_name'] == ">50K"
 
 
 def test_predict_2(test_client):
@@ -71,7 +71,7 @@ def test_predict_2(test_client):
     )
     response = test_client.post("/", json=user_input.dict())
     assert response.status_code == 200
-    assert response.json()['class_name'] in ["<=50K", ">50K"]
+    assert response.json()['class_name'] == "<=50K"
 
 
 def test_predict_3(test_client):
